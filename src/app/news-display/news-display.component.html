@@ -1,0 +1,12 @@
+<h1>Tech News App</h1>
+<ol>
+    <li *ngFor="let tn of techNewsList" 
+    (click)="selectEvent(tn)"
+    [class.selected]="tn === selectedNews">
+        <a href="javascript:void(0)">{{tn.Title}}</a>
+        
+    </li>
+    
+</ol>
+<app-news-tags [selectedNews]="selectedNews"></app-news-tags>
+<app-news-summary [selectedNews]="selectedNews"></app-news-summary>

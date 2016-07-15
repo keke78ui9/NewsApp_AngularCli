@@ -1,0 +1,4 @@
+<div *ngIf="selectedNews">
+    <div [innerHtml]="selectedNews.Description | shortenHtml:100"></div>
+    <!--<a href="{{tn.Link}}" class="btn btn-default" target="_blank">Read More</a>-->
+</div>
