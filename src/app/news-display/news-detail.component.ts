@@ -14,6 +14,7 @@ import {NewsModel} from '../dataServices/newsModel';
   styleUrls: ['news-detail.component.css'],
   providers: [NewsDataService]
 })
+
 export class NewsDetailComponent implements OnInit {
   newsModel: NewsModel = new NewsModel();
   constructor(private route: ActivatedRoute,
@@ -23,22 +24,11 @@ export class NewsDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params =>{
-      console.info("detail start");
       let id = params['id'];
       let news$ = this.newsDataSvc.getOneData(id);
       news$.subscribe(res => {
           this.newsModel = res;
-          console.info("subscribe to see data " + res.Id);
       })
-      // test.subscribe((data) => {
-      //     console.info(data);
-      // })
-           // news$.subscribe(x=>{
-      //   console.info(x);
-      //   let news = x.find(_ => _.id === id);
-
-      //   console.info(news);
-      // });
     });
   }
 

@@ -3,8 +3,6 @@
     <li *ngFor="let tn of techNewsList$ | async" 
     (click)="selectEvent(tn)"
     [class.selected]="tn === selectedNews">
-    <!--<a [routerLink]="['/hello', 'Zed']">Hello Zed</a>-->
-        <!--<a [routerLink]="['/detail', {id: tn.Id}]">{{tn.Title}}</a>-->
         <a [routerLink]="['/detail', tn.Id]">{{tn.Title}}</a>
     </li>
     

@@ -27,7 +27,6 @@ export class NewsDisplayComponent implements OnInit {
   }
 
   selectEvent(news: any) {
-    console.info(news);
     this.selectedNews = news;
   }
 }
