@@ -10,6 +10,6 @@ import { ROUTER_DIRECTIVES }  from '@angular/router';
 })
 
 export class NewsApp2AppComponent {
-  title = 'news-app2 works!';
+  title = 'TECH News App';
   constructor() {} 
 }

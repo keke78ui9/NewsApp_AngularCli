@@ -1,13 +1,4 @@
-import { Injectable } from '@angular/core';
-
-@Injectable()
-export class NewsDataService {
-
-  constructor() {}
-
-
-  public getData(): any[] {
-    return [
+[
     {
     "Id": "aba3702c-2a8c-460e-898b-002389ecdd14",
     "Title": "20 top examples of JavaScript",
@@ -116,7 +107,4 @@ export class NewsDataService {
     "PublishDate": "2016-05-19T12:35:48",
     "Tags": [],
     "Category": ""
-  }
-        ];
-  }
-}
+  }]

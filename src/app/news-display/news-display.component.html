@@ -1,10 +1,11 @@
-<h1>Tech News App</h1>
+<h1>News List</h1>
 <ol>
-    <li *ngFor="let tn of techNewsList" 
+    <li *ngFor="let tn of techNewsList$ | async" 
     (click)="selectEvent(tn)"
     [class.selected]="tn === selectedNews">
-        <a href="javascript:void(0)">{{tn.Title}}</a>
-        
+    <!--<a [routerLink]="['/hello', 'Zed']">Hello Zed</a>-->
+        <!--<a [routerLink]="['/detail', {id: tn.Id}]">{{tn.Title}}</a>-->
+        <a [routerLink]="['/detail', tn.Id]">{{tn.Title}}</a>
     </li>
     
 </ol>

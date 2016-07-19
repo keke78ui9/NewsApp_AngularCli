@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import {NewsDataService} from '../news-data-service.service';
+import {NewsDataService} from '../dataServices/news-data-service.service';
 import {NewsDetailComponent} from './news-summary.component';
 import {NewsTagsComponent} from './news-tags.component';
+
+import {ROUTER_DIRECTIVES} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   moduleId: module.id,
@@ -10,17 +13,17 @@ import {NewsTagsComponent} from './news-tags.component';
   templateUrl: 'news-display.component.html',
   styleUrls: ['news-display.component.css'],
   providers: [NewsDataService],
-  directives: [NewsDetailComponent, NewsTagsComponent]
+  directives: [NewsDetailComponent, NewsTagsComponent, ROUTER_DIRECTIVES]
   
 })
 export class NewsDisplayComponent implements OnInit {
-  techNewsList: any[];
+  techNewsList$: Observable<any[]>;
   selectedNews: {};
 
   constructor(private newsDataSvc: NewsDataService) {}
 
   ngOnInit() {
-    this.techNewsList = this.newsDataSvc.getData();
+    this.techNewsList$ = this.newsDataSvc.getData();
   }
 
   selectEvent(news: any) {
